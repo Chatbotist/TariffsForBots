@@ -3,16 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable="no">
     <title>Тарифы</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body {
-            background: linear-gradient(135deg, #3f87a6, #ebf8e1);
+            background-color: #000000; /* Черный фон для всего тела */
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
-            color: #333;
+            color: #ffffff;
+            user-select: none; /* Запрет на копирование текста */
         }
 
         .container {
@@ -22,13 +23,23 @@
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.9);
+            background-color: #000000; /* Черный фон для контейнера */
+        }
+
+        .info {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1); /* Прозрачный фон для информации */
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         h1 {
             font-size: 36px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #ffffff; /* Белый цвет заголовка */
         }
 
         .tariff-table {
@@ -37,12 +48,11 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
         }
 
         .tariff-table thead {
-            background: linear-gradient(135deg, #4a90e2, #50e3c2);
-            color: white;
+            background-color: #000000; /* Черный цвет заголовка таблицы */
+            color: #ffffff; /* Белый цвет текста заголовка */
         }
 
         .tariff-table th,
@@ -64,7 +74,11 @@
 
         .tariff-table tr:hover {
             transform: scale(1.02);
-            background-color: #f1f1f1;
+            background-color: #333; /* Цвет рядов при наведении */
+        }
+
+        .tariff-table tr:hover td {
+            background-color: inherit; /* Сохраняем цвет при наведении на текст */
         }
 
         @media (max-width: 600px) {
@@ -85,6 +99,9 @@
 <body>
 
     <div class="container">
+        <div class="info">
+            Цена зависит от количества контактов во всех ваших ботах и подключенных дополнительных опций. Удаленные контакты также считаются, но только в одном учетном периоде.
+        </div>
         <h1>Тарифы</h1>
         <table class="tariff-table">
             <thead>
@@ -211,6 +228,10 @@
     </div>
 
     <script>
+        // Установка черного цвета заголовка и фона в Telegram WebApp
+        Telegram.WebApp.setHeaderColor("#000000");
+        Telegram.WebApp.setBackgroundColor("#000000");
+
         // Инициализация Telegram Mini App
         Telegram.WebApp.enableClosingConfirmation();
         Telegram.WebApp.expand();
