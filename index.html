@@ -27,12 +27,12 @@
         }
 
         .info {
-            font-size: 20px; /* Увеличен шрифт для плашки */
+            font-size: 20px; /* Размер шрифта для плашки */
             margin-bottom: 20px;
-            padding: 15px; /* Увеличено внутреннее пространство */
-            background-color: rgba(255, 215, 0, 0.8); /* Яркий фон для плашки */
+            padding: 15px; /* Внутренние отступы */
+            background-color: rgba(255, 255, 255, 0.5); /* Полупрозрачный фон */
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 215, 0, 0.8); /* Обводка */
         }
 
         h1 {
@@ -66,6 +66,7 @@
 
         .tariff-table th {
             font-size: 20px;
+            pointer-events: none; /* Отключаем события наведения для заголовков */
         }
 
         .tariff-table tr {
@@ -229,8 +230,9 @@
 
     <script>
         // Установка цветов заголовка и фона в Telegram WebApp
-        Telegram.WebApp.setHeaderColor("#3f87a6"); // Цвет верхнего фона страницы
+        Telegram.WebApp.setHeaderColor("#3f87a6"); // Цвет верхнего фона приложения
         Telegram.WebApp.setBackgroundColor("#ebf8e1"); // Цвет фона страницы
+
         // Инициализация Telegram Mini App
         Telegram.WebApp.enableClosingConfirmation();
         Telegram.WebApp.expand();
