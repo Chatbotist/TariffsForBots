@@ -27,10 +27,10 @@
         }
 
         .info {
-            font-size: 18px;
+            font-size: 20px; /* Увеличен шрифт для плашки */
             margin-bottom: 20px;
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.1); /* Прозрачный фон для информации */
+            padding: 15px; /* Увеличено внутреннее пространство */
+            background-color: rgba(255, 215, 0, 0.8); /* Яркий фон для плашки */
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
@@ -39,7 +39,7 @@
             font-size: 36px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            color: black; /* Белый текст */
+            color: black; /* Цвет заголовка */
         }
 
         .tariff-table {
@@ -92,7 +92,7 @@
                 font-size: 16px;
             }
         }
-        
+
     </style>
 </head>
 
@@ -100,7 +100,7 @@
 
     <div class="container">
         <div class="info">
-            Переход между тарифами происходит автоматически, при достижении лимита уникальных пользователей и оплачивается по новой ставке вначале следующего периода.
+            Переход между тарифами происходит автоматически, при достижении лимита уникальных пользователей и оплачивается по новой ставке в начале следующего периода.
         </div>
         <h1>Тарифы</h1>
         <table class="tariff-table">
@@ -228,10 +228,9 @@
     </div>
 
     <script>
-        // Установка черного цвета заголовка и фона в Telegram WebApp
-        Telegram.WebApp.setHeaderColor("#000000");
-        Telegram.WebApp.setBackgroundColor("#000000");
-
+        // Установка цветов заголовка и фона в Telegram WebApp
+        Telegram.WebApp.setHeaderColor("#3f87a6"); // Цвет верхнего фона страницы
+        Telegram.WebApp.setBackgroundColor("#ebf8e1"); // Цвет фона страницы
         // Инициализация Telegram Mini App
         Telegram.WebApp.enableClosingConfirmation();
         Telegram.WebApp.expand();
