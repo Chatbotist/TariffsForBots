@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,80 +7,52 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body {
-            background: linear-gradient(135deg, #3f87a6, #ebf8e1);
-            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            color: #333;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.9);
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 24px;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .tariff-table {
             width: 100%;
             border-collapse: collapse;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .tariff-table thead {
-            background: linear-gradient(135deg, #4a90e2, #50e3c2);
-            color: white;
         }
 
         .tariff-table th,
         .tariff-table td {
-            border: 1px solid #ddd;
+            border: 1px solid #dddddd;
             padding: 12px;
             text-align: left;
-            position: relative;
-            transition: background-color 0.3s;
         }
 
         .tariff-table th {
-            font-size: 20px;
-        }
-
-        .tariff-table tr {
-            transition: transform 0.3s;
-        }
-
-        .tariff-table tr:hover {
-            transform: scale(1.02);
-            background-color: #f1f1f1;
+            background-color: #f4f4f4;
         }
 
         @media (max-width: 600px) {
             h1 {
-                font-size: 28px;
+                font-size: 20px;
             }
 
             .tariff-table th,
             .tariff-table td {
-                padding: 10px;
-                font-size: 16px;
+                padding: 8px;
+                font-size: 14px;
             }
         }
-        
     </style>
 </head>
-
 <body>
 
     <div class="container">
@@ -209,7 +180,7 @@
             </tbody>
         </table>
     </div>
-
+    
     <script>
         // Инициализация Telegram Mini App
         Telegram.WebApp.enableClosingConfirmation();
@@ -217,5 +188,4 @@
     </script>
 
 </body>
-
 </html>
