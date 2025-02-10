@@ -157,6 +157,24 @@
         // Инициализация Telegram Mini App
         Telegram.WebApp.enableClosingConfirmation();
         Telegram.WebApp.expand();
+        Telegram.disableVerticalSwipes();
+        Telegram.lockOrientation("portrait");
+
+        // Инициализация кнопки
+        Telegram.WebApp.MainButton
+            .setParams({
+                color: '#3f87a6', // Цвет кнопки (исправлено: добавлены кавычки)
+                text_color: '#ffffff', // Цвет текста
+                text: 'ХОЧУ ЧАТ-БОТА', // Текст на кнопке
+                is_active: true, // Активировать кнопку
+                is_visible: true, // Сделать кнопку видимой
+                has_shine_effect: true // Добавить эффект сияния
+            })
+            .show() // Показать кнопку
+            .onClick(() => {
+                // Открыть ссылку в Telegram
+                Telegram.WebApp.openLink('https://botform.vercel.app/?backUrl=https://t.me/MyPaymentsiBot/tariffs');
+            });
     </script>
 
 </body>
