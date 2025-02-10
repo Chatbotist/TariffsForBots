@@ -8,12 +8,12 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body {
-            background: #3f87a6; /* Цвета фона теперь совпадает с верхним фоном */
+            background: #3f87a6;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
             color: #333;
-            user-select: none; /* Запрет на копирование текста */
+            user-select: none;
         }
 
         .container {
@@ -23,23 +23,23 @@
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.9); /* Прозрачный фон для контейнера */
+            background: rgba(255, 255, 255, 0.9);
         }
 
         .info {
-            font-size: 16px; /* Уменьшен размер шрифта для плашки */
+            font-size: 16px;
             margin-bottom: 20px;
-            padding: 10px; /* Уменьшены внутренние отступы */
-            background-color: rgba(255, 255, 255, 0.5); /* Полупрозрачный фон */
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
             border-radius: 8px;
-            border: 2px solid rgba(70, 130, 180, 0.8); /* Синяя обводка */
+            border: 2px solid rgba(70, 130, 180, 0.8);
         }
 
         h1 {
             font-size: 36px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            color: black; /* Цвет заголовка */
+            color: black;
         }
 
         .tariff-table {
@@ -51,14 +51,14 @@
         }
 
         .tariff-table thead {
-            background: linear-gradient(135deg, #4a90e2, #50e3c2); /* Цветной заголовок таблицы */
-            color: white; /* Белый цвет текста заголовка */
+            background: linear-gradient(135deg, #4a90e2, #50e3c2);
+            color: white;
         }
 
         .tariff-table th,
         .tariff-table td {
             border: 1px solid #ddd;
-            padding: 10px; /* Уменьшены внутренние отступы */
+            padding: 10px;
             text-align: left;
             position: relative;
             transition: background-color 0.3s;
@@ -66,7 +66,7 @@
 
         .tariff-table th {
             font-size: 20px;
-            pointer-events: none; /* Отключаем события наведения для заголовков */
+            pointer-events: none;
         }
 
         .tariff-table tr {
@@ -75,11 +75,11 @@
 
         .tariff-table tr:hover {
             transform: scale(1.02);
-            background-color: #f1f1f1; /* Цвет рядов при наведении */
+            background-color: #f1f1f1;
         }
 
         .tariff-table tr:hover td {
-            background-color: inherit; /* Сохраняем цвет при наведении на текст */
+            background-color: inherit;
         }
 
         @media (max-width: 600px) {
@@ -89,18 +89,16 @@
 
             .tariff-table th,
             .tariff-table td {
-                padding: 8px; /* Уменьшены внутренние отступы для телефона */
+                padding: 8px;
                 font-size: 16px;
             }
         }
-
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="info">
-
             Переход между тарифами происходит автоматически, при достижении лимита уникальных пользователей и оплачивается по новой ставке в начале следующего периода.
         </div>
         <h1>Тарифы</h1>
@@ -145,38 +143,38 @@
     </div>
 
     <script>
-        // Установка цветов заголовка и фона в Telegram WebApp
-        Telegram.WebApp.onEvent('visibilityChanged', function(event) {
-            if (event.visible) {
-                // Устанавливаем цвета только после загрузки
-                Telegram.WebApp.setHeaderColor("#3f87a6"); // Цвет верхнего фона приложения
-                Telegram.WebApp.setBackgroundColor("#3f87a6"); // Цвет фона страницы
+        document.addEventListener("DOMContentLoaded", function() {
+            // Проверка доступности Telegram WebApp API
+            if (window.Telegram && Telegram.WebApp) {
+                console.log("Telegram WebApp API доступен");
+
+                // Установка цветов заголовка и фона
+                Telegram.WebApp.setHeaderColor("#3f87a6");
+                Telegram.WebApp.setBackgroundColor("#3f87a6");
+
+                // Инициализация Telegram Mini App
+                Telegram.WebApp.enableClosingConfirmation();
+                Telegram.WebApp.expand();
+
+                // Инициализация кнопки
+                Telegram.WebApp.MainButton
+                    .setParams({
+                        color: '#3f87a6',
+                        text_color: '#ffffff',
+                        text: 'ХОЧУ ЧАТ-БОТА',
+                        is_active: true,
+                        is_visible: true,
+                        has_shine_effect: true
+                    })
+                    .show()
+                    .onClick(() => {
+                        Telegram.WebApp.openLink('https://botform.vercel.app/?backUrl=https://t.me/MyPaymentsiBot/tariffs');
+                    });
+            } else {
+                console.error("Telegram WebApp API не загружен");
             }
         });
-
-        // Инициализация Telegram Mini App
-        Telegram.WebApp.enableClosingConfirmation();
-        Telegram.WebApp.expand();
-        Telegram.disableVerticalSwipes();
-        Telegram.lockOrientation("portrait");
-
-        // Инициализация кнопки
-        Telegram.WebApp.MainButton
-            .setParams({
-                color: '#3f87a6', // Цвет кнопки (исправлено: добавлены кавычки)
-                text_color: '#ffffff', // Цвет текста
-                text: 'ХОЧУ ЧАТ-БОТА', // Текст на кнопке
-                is_active: true, // Активировать кнопку
-                is_visible: true, // Сделать кнопку видимой
-                has_shine_effect: true // Добавить эффект сияния
-            })
-            .show() // Показать кнопку
-            .onClick(() => {
-                // Открыть ссылку в Telegram
-                Telegram.WebApp.openLink('https://botform.vercel.app/?backUrl=https://t.me/MyPaymentsiBot/tariffs');
-            });
     </script>
-
 </body>
 
 </html>
