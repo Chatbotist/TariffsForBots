@@ -8,7 +8,7 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body {
-            background: #A7A7F4;
+            background: #7B6BE4;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
@@ -23,24 +23,23 @@
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            background: #6983EA;
+            background: rgba(255, 255, 255, 0.9);
         }
 
         .info {
             font-size: 16px;
             margin-bottom: 20px;
             padding: 10px;
-            background-color: #A8E240;
+            background-color: rgba(255, 255, 255, 0.5);
             border-radius: 8px;
-            border: 2px solid #A8E240;
-            color: #FFFFFF;
+            border: 2px solid rgba(70, 130, 180, 0.8);
         }
 
         h1 {
             font-size: 36px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            color: #A8E240;
+            color: #3E20FF;
         }
 
         .tariff-table {
@@ -53,7 +52,7 @@
 
         .tariff-table thead {
             background: #A8E240;
-            color: black;
+            color: white;
         }
 
         .tariff-table th,
@@ -99,6 +98,9 @@
 
 <body>
     <div class="container">
+        <div class="info">
+            Переход между тарифами происходит автоматически, при достижении лимита уникальных пользователей и оплачивается по новой ставке в начале следующего периода.
+        </div>
         <h1>Тарифы</h1>
         <table class="tariff-table">
             <thead>
@@ -133,14 +135,11 @@
                     <td>9 900 ₽</td>
                 </tr>
                 <tr>
-                    <td>> 20 000</td>
+                    <td>∞</td>
                     <td>14 900 ₽</td>
                 </tr>
             </tbody>
         </table>
-        <div class="info">
-            Переход между тарифами происходит автоматически, при достижении лимита уникальных пользователей и оплачивается по новой ставке в начале следующего периода.
-        </div>
     </div>
 
     <script>
@@ -150,8 +149,8 @@
                 console.log("Telegram WebApp API доступен");
 
                 // Установка цветов заголовка и фона
-                Telegram.WebApp.setHeaderColor("#A7A7F4");
-                Telegram.WebApp.setBackgroundColor("#A7A7F4");
+                Telegram.WebApp.setHeaderColor("#7B6BE4");
+                Telegram.WebApp.setBackgroundColor("#7B6BE4");
 
                 // Инициализация Telegram Mini App
                 Telegram.WebApp.enableClosingConfirmation();
@@ -160,7 +159,7 @@
                 // Инициализация кнопки
                 Telegram.WebApp.MainButton
                     .setParams({
-                        color: '#A8E240',
+                        color: '#7B6BE4',
                         text_color: '#ffffff',
                         text: 'ХОЧУ ЧАТ-БОТА',
                         is_active: true,
