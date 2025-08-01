@@ -8,7 +8,7 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body {
-            background: #3f87a6;
+            background: #A7A7F4;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
@@ -23,23 +23,24 @@
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.9);
+            background: #6983EA;
         }
 
         .info {
             font-size: 16px;
             margin-bottom: 20px;
             padding: 10px;
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: #A8E240;
             border-radius: 8px;
-            border: 2px solid rgba(70, 130, 180, 0.8);
+            border: 2px solid #A8E240;
+            color: #FFFFFF;
         }
 
         h1 {
             font-size: 36px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            color: black;
+            color: #A8E240;
         }
 
         .tariff-table {
@@ -51,8 +52,8 @@
         }
 
         .tariff-table thead {
-            background: linear-gradient(135deg, #4a90e2, #50e3c2);
-            color: white;
+            background: #A8E240;
+            color: black;
         }
 
         .tariff-table th,
@@ -98,9 +99,6 @@
 
 <body>
     <div class="container">
-        <div class="info">
-            Переход между тарифами происходит автоматически, при достижении лимита уникальных пользователей и оплачивается по новой ставке в начале следующего периода.
-        </div>
         <h1>Тарифы</h1>
         <table class="tariff-table">
             <thead>
@@ -140,6 +138,9 @@
                 </tr>
             </tbody>
         </table>
+        <div class="info">
+            Переход между тарифами происходит автоматически, при достижении лимита уникальных пользователей и оплачивается по новой ставке в начале следующего периода.
+        </div>
     </div>
 
     <script>
@@ -149,8 +150,8 @@
                 console.log("Telegram WebApp API доступен");
 
                 // Установка цветов заголовка и фона
-                Telegram.WebApp.setHeaderColor("#3f87a6");
-                Telegram.WebApp.setBackgroundColor("#3f87a6");
+                Telegram.WebApp.setHeaderColor("#A7A7F4");
+                Telegram.WebApp.setBackgroundColor("#A7A7F4");
 
                 // Инициализация Telegram Mini App
                 Telegram.WebApp.enableClosingConfirmation();
@@ -159,7 +160,7 @@
                 // Инициализация кнопки
                 Telegram.WebApp.MainButton
                     .setParams({
-                        color: '#3f87a6',
+                        color: '#A8E240',
                         text_color: '#ffffff',
                         text: 'ХОЧУ ЧАТ-БОТА',
                         is_active: true,
