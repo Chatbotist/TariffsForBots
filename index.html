@@ -8,7 +8,7 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body {
-            background: #7B6BE4;
+            background: #3f87a6;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
@@ -39,7 +39,7 @@
             font-size: 36px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            color: #3E20FF;
+            color: black;
         }
 
         .tariff-table {
@@ -51,7 +51,7 @@
         }
 
         .tariff-table thead {
-            background: #A8E240;
+            background: linear-gradient(135deg, #4a90e2, #50e3c2);
             color: white;
         }
 
@@ -135,7 +135,7 @@
                     <td>9 900 ₽</td>
                 </tr>
                 <tr>
-                    <td>∞</td>
+                    <td>> 20 000</td>
                     <td>14 900 ₽</td>
                 </tr>
             </tbody>
@@ -149,8 +149,8 @@
                 console.log("Telegram WebApp API доступен");
 
                 // Установка цветов заголовка и фона
-                Telegram.WebApp.setHeaderColor("#7B6BE4");
-                Telegram.WebApp.setBackgroundColor("#7B6BE4");
+                Telegram.WebApp.setHeaderColor("#3f87a6");
+                Telegram.WebApp.setBackgroundColor("#3f87a6");
 
                 // Инициализация Telegram Mini App
                 Telegram.WebApp.enableClosingConfirmation();
@@ -159,7 +159,7 @@
                 // Инициализация кнопки
                 Telegram.WebApp.MainButton
                     .setParams({
-                        color: '#7B6BE4',
+                        color: '#3f87a6',
                         text_color: '#ffffff',
                         text: 'ХОЧУ ЧАТ-БОТА',
                         is_active: true,
